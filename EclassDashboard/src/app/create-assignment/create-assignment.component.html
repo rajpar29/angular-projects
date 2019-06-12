@@ -1,0 +1,56 @@
+<div class="createForm">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div class="form-group">
+      <label for="title" >Title</label>
+      <input type="text" [(ngModel)]="title" name="title" class="form-control" id="title" placeholder="Enter Title" required>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea rows="3" [(ngModel)]="description" name="description" class="form-control" id="description" placeholder="Description" required></textarea>
+    </div>
+    <div class="form-group">
+      <label for="selectSem">Select Semester</label>
+      <select class="form-control" id="selectSem"  [(ngModel)]="selectSem" name="selectSem"  required>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="selectBranch" >Select Branch</label>
+      <select class="form-control" id="selectBranch" [(ngModel)]="selectBranch" name="selectBranch" required>
+        <option value="comp_engg">Computer Engineering</option>
+        <option value="info_tech">Information Technology</option>
+        <option value="civil_engg">Civil Engineering</option>
+        <option value="mech_engg">Mechanical Engineering</option>
+        <option value="elec_engg">Electrical Engineering</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="selectType">Select Type</label>
+      <select class="form-control" id="selectType"  [(ngModel)]="selectType" name="selectType" required>
+        <option value="assignments">Assignment</option>
+        <option value="study_material">Study Material</option>
+        <option value="announcement">Announcement</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="selectSubject" >Select Subject</label>
+      <select class="form-control" id="selectSubject" [(ngModel)]="selectSubject" name="selectSubject" required>
+        <option value="adv_java">Advanced JAVA</option>
+        <option value="web_tech">Web Tech</option>
+      </select>
+    </div>
+    <div class="form-group"> 
+      <app-upload-files (outputDownloadURl)="geturl($event)"></app-upload-files>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Create</button>
+  </form>
+
+</div>

@@ -1,0 +1,19 @@
+<a
+  style="cursor: pointer;"
+  class="list-group-item clearfix"
+  (click)="navToDetail()"
+  routerLinkActive = "active"
+ >
+  <div class="float-right">
+  <br><br>
+  </div>
+  <div class="card bg-light mb-3" style="width: 18rem; padding: 0%">
+    <div class="card-body">
+      <h4 class="card-title list-group-item-heading">{{ browseItem.title }}</h4>
+      <br>
+      <p class="card-text list-group-item-text">{{ browseItem.description }}</p>
+    </div>
+  </div>
+
+
+</a>

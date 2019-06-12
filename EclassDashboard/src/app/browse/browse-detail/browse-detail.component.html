@@ -1,0 +1,27 @@
+<div class="container">
+
+  <div class="row">
+      <div class="card mt-4">
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                
+                <!-- <div class="carousel-item active" *ngFor="let img of browseItem.imageUrl">
+                  <img class="d-block w-100 card-img-top img-fluid" 
+                  [src]="img"
+                  alt="{{ productItem.title }}"
+                  class="img-responsive"
+                  style="margin: 0 auto">
+                </div> -->
+              </div>
+            </div>
+        <div class="card-body">
+          <h3 class="card-title">{{ browseItem.title }}</h3>
+          <p class="card-text">{{ browseItem.description }}</p>
+          <hr>
+          <h4>Attachments</h4>
+          <div *ngFor="let file of browseItem.fileUrls">
+            <button type="button" class="btn btn-primary" style="margin: 10px" (click) = "fileClicked(file.url)">{{file.name}}</button>
+            <br>
+          </div>
+        </div>
+      </div>
